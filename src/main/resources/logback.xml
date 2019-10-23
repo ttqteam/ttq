@@ -1,0 +1,59 @@
+<configuration>
+
+  <variable name="LOGDIR" value="${logs.dir:-logs}" />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>ERROR</level>
+    </filter>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="RequestLog" class="ch.qos.logback.core.FileAppender">
+    <file>${LOGDIR}/ttq.request.log</file>
+    <encoder>
+      <pattern>%d - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="RequestLogAsync" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="RequestLog" />
+  </appender>
+
+  <appender name="PipelineLog" class="ch.qos.logback.core.FileAppender">
+    <file>${LOGDIR}/ttq.pipeline.log</file>
+    <encoder>
+      <pattern>%d - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="PipelineLogAsync" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="PipelineLog" />
+  </appender>
+
+  <appender name="File" class="ch.qos.logback.core.FileAppender">
+    <file>${LOGDIR}/ttq.log</file>
+    <encoder>
+      <pattern>%d %-4relative %-5level - %msg [%thread] %logger{35} %n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FileAsync" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="File" />
+  </appender>
+
+  <logger name="request" level="INFO">
+    <appender-ref ref="RequestLogAsync"/>
+  </logger>
+
+  <logger name="ttq.pipeline.Pipeline" level="INFO">
+    <appender-ref ref="PipelineLogAsync"/>
+  </logger>
+
+  <root level="info">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FileAsync" />
+  </root>
+</configuration>

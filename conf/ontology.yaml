@@ -1,0 +1,5 @@
+name: orders
+sql: orders_tbl
+dimensions:
+  - name: asset
+    sql: asset_column

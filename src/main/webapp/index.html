@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/ttk.css" rel="stylesheet"/>
+    <link href="css/tokenedit.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+<!--    <link href="css/open-iconic/font/css/open-iconic.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+<div id=topdiv style='height:100%; width:800px; margin:0 auto; padding-top:100px; '>
+  <div style='width:100%; margin:auto;'>
+
+      <div id=intro style='margin-bottom:10px;'>Start typing query - like
+          "<a href="" data-query="rfqs">rfqs</a>",
+          "<a href="" data-query="hit rate">hit rate</a>",
+          "<a href="" data-query="ccy pair">ccy pair</a>" or
+          "<a href="" data-query="client">client</a>"
+      </div>
+
+      <div id='tokenbox-cont' class='tokenbox-cont'>
+        <!--<span style="position:absolute;right:50px;" class="oi" data-glyph="chevron-bottom"></span>-->
+        <div class='tokenbox-editbox' contenteditable=true placeholder="Type your query here"></div>
+        <div class='tokenbox-hints'></div>
+        <div class="tokenbox-edittoken-cont">
+          <div class="tokenbox-edittoken-arrow"></div>
+          <div class="tokenbox-edittoken-list"></div>
+        </div>
+      </div>
+
+      <div id="modifiers"></div>
+      <div id="results" style="width: 800px; height: 420px; margin-top: 10px"></div>
+</div>
+
+  <script src="jquery.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="Chart.bundle.min.js"></script>
+  <script src="tokenedit.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

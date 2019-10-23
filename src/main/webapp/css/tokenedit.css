@@ -1,0 +1,110 @@
+.tokenbox-cont {
+  position:relative;
+  width: 100%;
+  font-size: 16px;
+}
+
+.tokenbox-editbox {
+_width: 100%;
+  padding: 4px;
+
+  border: 1px solid #ccc;
+  outline: none;
+
+  background-color: #fff;
+}
+
+.tokenbox-editbox:focus {
+  border: 1px solid #00bbff;
+}
+
+.tokenbox-hints {
+  display:none;
+  width: 100%;
+  position:absolute;
+  padding: 0;
+  _min-width: 160px;
+  z-index: 20;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.tokenedit-hint {
+  padding: 3px 5px;
+}
+.tokenedit-hint.selected {
+    background-color:#eee;
+}
+
+.tokenedit-token {
+    display: inline;
+    background-color:#ddd;
+    _border:1px solid #aaa;
+    border-radius: 5px;
+    _margin: 0px 1px;
+}
+
+.tokenedit-token-placeholder {
+    display: inline;
+    text-decoration: underline;
+    cursor: pointer;
+    _margin: 0px 1px;
+}
+
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+  color:#aaa;
+}
+
+/**************/
+
+.tokenbox-edittoken-cont {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  width: 90%;
+  border: 1px solid #000;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: #fff;
+  padding: 10px;
+}
+
+.tokenbox-edittoken-arrow {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: -30px;
+  height: 30px;
+  left: 0px;
+}
+.tokenbox-edittoken-arrow:after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: 6px 5px 9px -9px black,
+                      5px 6px 9px -9px black;
+  -moz-box-shadow: 6px 5px 9px -9px black,
+                   5px 6px 9px -9px black;
+  box-shadow: 6px 5px 9px -9px black,
+              5px 6px 9px -9px black;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+.tokenbox-edittoken-row {
+  padding: 0px 5px;
+}
+.tokenbox-edittoken-row:hover {
+  background-color: #ccc;
+  cursor: default;
+}

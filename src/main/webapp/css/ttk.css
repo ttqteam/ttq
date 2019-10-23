@@ -1,0 +1,14 @@
+.modifier { margin-right: 10px }
+
+#results { overflow-y: auto; text-align: center }
+
+#results .chartTitle { margin-top: 10px; }
+#results .scalar { font-size: 100px; line-height: 100px; }
+
+#results thead th { position: sticky; top: 0; background: white; z-index: 10; }
+#results td { border-bottom: 1px solid #eee; }
+#results tbody tr:last-child td { border-bottom: 0; }
+#results thead th { box-shadow: 0px 2px 0 #eee; }
+
+
+
